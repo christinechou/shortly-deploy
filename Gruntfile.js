@@ -93,18 +93,19 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('upload', function(n) {
-    if (grunt.option('prod')) {
+    // if (grunt.option('prod')) {
       // add your production server task here
       grunt.task.run(['shell:prodServer']);
         //
-    } else {
-      grunt.task.run([ 'server-dev' ]);
-    }
+    // } else {
+    //   else {
+    //   grunt.task.run([ 'server-dev' ]);
+    // }
   });
 
   grunt.registerTask('deploy', function(n) {
     if (grunt.option('prod')) {
-      grunt.task.run(['build', 'upload:' + n]);
+      grunt.task.run(['build', 'upload']);
     }
   });
 
